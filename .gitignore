@@ -1,4 +1,5 @@
 /node_modules
+/server/keys.js
 /client/dist/bundle.js
 .vscode/
 npm-debug.log
