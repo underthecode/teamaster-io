@@ -1,4 +1,4 @@
 module.exports = {
   googleClientID: 'testing',
-  googleClientSecret: 'testing'
+  googleClientSecret: 'AGAIN...'
 };
