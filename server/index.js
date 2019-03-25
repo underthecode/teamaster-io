@@ -6,7 +6,7 @@ const keys = require('./config/keys');
 const app = express();
 
 passport.use(
-  // this has internal code to indentify as 'google' string
+  // this has internal code to identify 'google' as a string
   new GoogleStrategy(
     {
       clientID: keys.googleClientID,
