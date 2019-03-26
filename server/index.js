@@ -5,6 +5,7 @@ const keys = require('./config/keys');
 
 const app = express();
 
+// configures passport
 passport.use(
   // this has internal code to identify 'google' as a string
   new GoogleStrategy(
