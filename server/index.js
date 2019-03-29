@@ -10,6 +10,17 @@ mongoose.connect(keys.mongoURI, { useNewUrlParser: true });
 
 const app = express();
 
+app.use(
+  cookieSession({
+    // cookie will last for 30 days before expiring
+    maxAge: 30 * 24 * 60 * 60 * 1000,
+    // used to encrypt cookie
+    keys: [keys.cookieKey]
+  })
+);
+app.use(passport.initialize());
+app.use(passport.session());
+
 require('./routes/authRoutes')(app);
 
 const PORT = process.env.PORT || 5000;
