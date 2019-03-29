@@ -5,6 +5,13 @@ const keys = require('../config/keys');
 
 const User = mongoose.model('users');
 
+// transform User Model ID to cookie/token
+passport.serializeUser((user, done) => {
+  // user.id (User Model ID) refers to unique assigned to record in db, NOT Google profile.id (OAuth ID)
+  // only need OAuth ID for initila sign in, after that only use User Model ID to identify apps users
+  done(null, user.id);
+});
+
 // configures passport
 passport.use(
   // this has internal code to identify 'google' as a string
