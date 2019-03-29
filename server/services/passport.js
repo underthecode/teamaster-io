@@ -12,6 +12,13 @@ passport.serializeUser((user, done) => {
   done(null, user.id);
 });
 
+// transform token/cookie back to User Model ID
+passport.deserializeUser((id, done) => {
+  User.findById(id).then(user => {
+    done(null, user);
+  });
+});
+
 // configures passport
 passport.use(
   // this has internal code to identify 'google' as a string
