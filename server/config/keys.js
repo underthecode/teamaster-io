@@ -1,6 +1,8 @@
 // keys.js
 if (process.env.NODE_ENV === 'production') {
   // app is in prod - return prod keys
-} ekse {
+  module.exports = require('./prod');
+} else {
   // app is in dev - return dev keys
+  module.exports = require('./dev');
 }
