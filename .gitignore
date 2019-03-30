@@ -1,5 +1,6 @@
 /node_modules
 /server/config/dev.js
+/server/config/prod.js
 /client/dist/bundle.js
 .vscode/
 npm-debug.log
