@@ -1,5 +1,5 @@
 {
-  "name": "emaily",
+  "name": "teamaster-io",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,6 +8,7 @@
     "npm": "6.9.0"
   },
   "scripts": {
+    "build": "webpack -w --mode development",
     "start": "node server/index.js",
     "dev": "nodemon server/index.js"
   },
@@ -19,7 +20,21 @@
     "mongoose": "^5.4.20",
     "nodemon": "^1.18.10",
     "passport": "^0.4.0",
-    "passport-google-oauth20": "^2.0.0"
+    "passport-google-oauth20": "^2.0.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-hot-loader": "^4.8.2"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.4.0",
+    "@babel/preset-env": "^7.4.2",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5",
+    "css-loader": "^2.1.1",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-server": "^3.2.1"
+  }
 }

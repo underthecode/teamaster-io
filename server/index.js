@@ -3,12 +3,16 @@ const mongoose = require('mongoose');
 const cookieSession = require('cookie-session');
 const passport = require('passport');
 const keys = require('./config/keys');
+const path = require('path');
 require('./models/User');
 require('./services/passport');
 
 mongoose.connect(keys.mongoURI, { useNewUrlParser: true });
 
 const app = express();
+
+// serve up dist files upon server initialization
+app.use(express.static(path.join(__dirname, '../client/dist')));
 
 app.use(
   cookieSession({
