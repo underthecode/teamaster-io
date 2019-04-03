@@ -8,6 +8,7 @@
     "npm": "6.9.0"
   },
   "scripts": {
+    "build": "webpack -w --mode development",
     "start": "node server/index.js",
     "dev": "nodemon server/index.js"
   },
@@ -21,7 +22,8 @@
     "passport": "^0.4.0",
     "passport-google-oauth20": "^2.0.0",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "react-hot-loader": "^4.8.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
