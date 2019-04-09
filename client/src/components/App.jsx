@@ -6,6 +6,7 @@ class App extends React.Component {
     return (
       <div>
         <h1>app renders!</h1>
+        <a href="/auth/google">sign in with Google</a>
       </div>
     );
   }
