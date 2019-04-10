@@ -11,7 +11,11 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h1>App renders!</h1>
+        <BrowserRouter>
+          <div>
+            <Route path="/" component={Landing} />
+          </div>
+        </BrowserRouter>
         <a href="/auth/google">Sign In with Google</a>
       </div>
     );
