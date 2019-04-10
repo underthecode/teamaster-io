@@ -14,6 +14,11 @@ const app = express();
 // serve up dist files upon server initialization
 app.use(express.static(path.join(__dirname, '../client/dist')));
 
+// specify route for /surveys
+app.get('/surveys', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/dist/index.html'));
+});
+
 app.use(
   cookieSession({
     // cookie will last for 30 days before expiring
