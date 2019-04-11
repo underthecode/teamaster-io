@@ -7,9 +7,16 @@ class Header extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1>Header</h1>
-      </div>
+      <nav>
+        <div className="nav-wrapper">
+          <a className="left brand-logo">teamaster-io</a>
+          <ul className="right">
+            <li>
+              <a href="/auth/google">Login with Google</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
     );
   }
 }

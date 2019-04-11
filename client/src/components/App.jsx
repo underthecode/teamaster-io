@@ -19,7 +19,6 @@ class App extends React.Component {
             <Route path="/surveys/new" component={SurveyNew} />
           </div>
         </BrowserRouter>
-        <a href="/auth/google">Sign In with Google</a>
       </div>
     );
   }
