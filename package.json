@@ -7,6 +7,11 @@
     "node": "11.13.0",
     "npm": "6.9.0"
   },
+  "proxy": {
+    "/api/*": {
+      "target": "http://localhost:5000"
+    }
+  },
   "scripts": {
     "build": "webpack -w --mode development",
     "start": "node server/index.js",
