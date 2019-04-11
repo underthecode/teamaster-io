@@ -10,7 +10,17 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /(node_modules|bower_components)/,
         loader: 'babel-loader',
-        options: { presets: ['@babel/env'] }
+        options: {
+          presets: [
+            [
+              '@babel/env',
+              {
+                useBuiltIns: 'entry',
+                corejs: 3
+              }
+            ]
+          ]
+        }
       },
       {
         test: /\.css$/,
@@ -23,12 +33,12 @@ module.exports = {
     path: path.resolve(__dirname, 'client/dist/'),
     publicPath: './client/dist/',
     filename: 'bundle.js'
-  },
+  }
   // devServer: {
   //   contentBase: path.join(__dirname, 'client/dist/'),
   //   port: 5000,
   //   publicPath: 'http://localhost:5000/dist/',
   //   hotOnly: true
   // },
-  plugins: [new webpack.HotModuleReplacementPlugin()]
+  // plugins: [new webpack.HotModuleReplacementPlugin()]
 };

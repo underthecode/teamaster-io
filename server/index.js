@@ -11,9 +11,19 @@ mongoose.connect(keys.mongoURI, { useNewUrlParser: true });
 
 const app = express();
 
-// serve up dist files upon server initialization
+// serve up dist files upon init
 app.use(express.static(path.join(__dirname, '../client/dist')));
+app.use('/surveys', express.static(path.join(__dirname, '../client/dist')));
 
+// routes
+app.get('/surveys', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/dist/index.html'));
+});
+app.get('/surveys/new', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/dist/index.html'));
+});
+
+// middleware order of execution
 app.use(
   cookieSession({
     // cookie will last for 30 days before expiring
@@ -27,6 +37,7 @@ app.use(passport.session());
 
 require('./routes/authRoutes')(app);
 
+// porting
 const PORT = process.env.PORT || 5000;
 app.listen(PORT);
 
