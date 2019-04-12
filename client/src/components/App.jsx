@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
-import { hot } from 'react-hot-loader';
+import { connect } from 'react-redux';
+import * as actions from '../actions';
 
 import Header from './Header';
 const Dashboard = () => <h2>Dashboard</h2>;
@@ -27,4 +28,7 @@ class App extends React.Component {
   }
 }
 
-export default hot(module)(App);
+export default connect(
+  null,
+  actions
+)(App);
