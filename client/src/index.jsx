@@ -1,3 +1,6 @@
+import 'core-js';
+import 'regenerator-runtime/runtime';
+
 import 'materialize-css/dist/css/materialize.min.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
