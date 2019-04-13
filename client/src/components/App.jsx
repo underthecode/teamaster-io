@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
-import { hot } from 'react-hot-loader';
+import { connect } from 'react-redux';
+import * as actions from '../actions';
 
 import Header from './Header';
 const Dashboard = () => <h2>Dashboard</h2>;
@@ -8,9 +9,14 @@ const SurveyNew = () => <h2>SurveyNew</h2>;
 const Landing = () => <h2>Landing</h2>;
 
 class App extends React.Component {
+  // lifecycle to check if current user is signed in or not
+  componentDidMount() {
+    this.props.fetchUser();
+  }
+
   render() {
     return (
-      <div>
+      <div className="container">
         <BrowserRouter>
           <div>
             <Header />
@@ -19,10 +25,12 @@ class App extends React.Component {
             <Route path="/surveys/new" component={SurveyNew} />
           </div>
         </BrowserRouter>
-        <a href="/auth/google">Sign In with Google</a>
       </div>
     );
   }
 }
 
-export default hot(module)(App);
+export default connect(
+  null,
+  actions
+)(App);
