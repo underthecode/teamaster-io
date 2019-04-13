@@ -10,7 +10,9 @@ const Landing = () => <h2>Landing</h2>;
 
 class App extends React.Component {
   // lifecycle to check if current user is signed in or not
-  componentDidMount() {}
+  componentDidMount() {
+    this.props.fetchUser();
+  }
 
   render() {
     return (
