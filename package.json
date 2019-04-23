@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "engines": {
-    "node": "11.13.0",
+    "node": "11.14.0",
     "npm": "6.9.0"
   },
   "proxy": {
@@ -13,9 +13,10 @@
     }
   },
   "scripts": {
-    "build": "webpack -w --mode development",
-    "start": "node server/index.js",
-    "dev": "nodemon server/index.js"
+    "build:dev": "webpack -w --mode development",
+    "build": "webpack",
+    "start:dev": "nodemon server/index.js",
+    "start": "node server/index.js"
   },
   "author": "",
   "license": "ISC",
