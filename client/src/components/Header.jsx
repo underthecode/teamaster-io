@@ -26,7 +26,7 @@ class Header extends React.Component {
   }
 
   render() {
-    console.log(this.props);
+    console.log('header status', this.props);
     return (
       <nav>
         <div className="nav-wrapper">

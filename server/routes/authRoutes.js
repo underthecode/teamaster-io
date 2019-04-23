@@ -10,7 +10,13 @@ module.exports = app => {
   );
 
   // handles 'code' exchange after user grants auth permission
-  app.get('/auth/google/callback', passport.authenticate('google'));
+  app.get(
+    '/auth/google/callback',
+    passport.authenticate('google'),
+    (req, res) => {
+      res.redirect('/surveys');
+    }
+  );
 
   // handles user logout
   app.get('/api/logout', (req, res) => {
