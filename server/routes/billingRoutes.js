@@ -6,6 +6,7 @@ module.exports = app => {
     if (!req.user) {
       return res.status(401).send({ error: 'You must be logged in!' });
     }
+
     const charge = await stripe.charges.create({
       amount: 500,
       currency: 'usd',
