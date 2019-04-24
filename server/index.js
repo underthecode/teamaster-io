@@ -2,8 +2,9 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cookieSession = require('cookie-session');
 const passport = require('passport');
-const keys = require('./config/keys');
 const path = require('path');
+const bodyParser = require('body-parser');
+const keys = require('./config/keys');
 require('./models/User');
 require('./services/passport');
 
@@ -24,6 +25,8 @@ app.get('/surveys/new', (req, res) => {
 });
 
 // middleware order of execution
+app.use(bodyParser.json());
+
 app.use(
   cookieSession({
     // cookie will last for 30 days before expiring
