@@ -14,7 +14,7 @@
   },
   "scripts": {
     "build:dev": "webpack -w --mode development --env.ENVIRONMENT=development",
-    "build": "webpack --env.ENVIRONMENT=production",
+    "build": "webpack",
     "start:dev": "nodemon server/index.js",
     "start": "node server/index.js"
   },
