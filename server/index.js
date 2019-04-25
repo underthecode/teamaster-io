@@ -12,17 +12,12 @@ mongoose.connect(keys.mongoURI, { useNewUrlParser: true });
 
 const app = express();
 
-// serve up dist files upon init
+// routes
 app.use(express.static(path.join(__dirname, '../client/dist')));
+
 app.use('/surveys', express.static(path.join(__dirname, '../client/dist')));
 
-// routes
-app.get('/surveys', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/dist/index.html'));
-});
-app.get('/surveys/new', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/dist/index.html'));
-});
+app.use('/surveys/new', express.static(path.join(__dirname, '../client/dist')));
 
 // middleware order of execution
 app.use(bodyParser.json());
