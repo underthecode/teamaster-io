@@ -5,7 +5,7 @@ const path = require('path');
 
 module.exports = env => {
   const currentPath = path.join(__dirname);
-  const basePath = currentPath + '/.env';
+  const basePath = currentPath + '.env';
   const envPath = basePath + '.' + env.ENVIRONMENT;
   const finalPath = fs.existsSync(envPath) ? envPath : basePath;
   const fileEnv = dotenv.config({ path: finalPath }).parsed;
