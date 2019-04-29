@@ -14,7 +14,7 @@
   },
   "scripts": {
     "build:dev": "webpack -w --mode development --env.ENVIRONMENT=development",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false webpack --env.ENVIRONMENT=production",
+    "heroku-postbuild": "webpack NODE_ENV=production",
     "start:dev": "nodemon server/index.js",
     "start": "node server/index.js"
   },
