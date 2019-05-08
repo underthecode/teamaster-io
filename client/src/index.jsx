@@ -20,5 +20,5 @@ ReactDOM.render(
   document.getElementById('app')
 );
 
-console.log('STRIPE KEY IS', process.env.STRIPE_KEY);
+console.log('STRIPE KEY IS', process.env.STRIPE_PUBLISHABLE_KEY);
 console.log('ENV IS', process.env.NODE_ENV);
