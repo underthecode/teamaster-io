@@ -39,7 +39,7 @@
     "react-stripe-checkout": "^2.6.3",
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0",
-    "stripe": "^6.31.2"
+    "stripe": "^6.32.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.4",
