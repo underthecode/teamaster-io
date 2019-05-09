@@ -18,7 +18,7 @@ class Mailer extends helper.Mail {
   }
 
   formatAddresses(recipients) {
-    return recipients.map(email => {
+    return recipients.map(({ email }) => {
       return new helper.Email(email);
     });
   }
@@ -46,7 +46,7 @@ class Mailer extends helper.Mail {
       body: this.toJSON()
     });
 
-    const response = this.sendgridApi(request);
+    const response = this.sendgridApi.API(request);
     return response;
   }
 }
