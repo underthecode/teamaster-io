@@ -38,6 +38,17 @@ class Mailer extends helper.Mail {
     });
     this.addPersonalization(personalize);
   }
+
+  async send() {
+    const request = this.sendgridApi.emptyRequest({
+      method: 'POST',
+      path: '/v3/mail/send',
+      body: this.toJSON()
+    });
+
+    const response = this.sendgridApi(request);
+    return response;
+  }
 }
 
 module.exports = Mailer;
