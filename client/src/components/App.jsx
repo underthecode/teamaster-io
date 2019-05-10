@@ -6,7 +6,7 @@ import * as actions from '../actions';
 import Header from './Header';
 import Landing from './Landing';
 import Dashboard from './Dashboard';
-const SurveyNew = () => <h2>SurveyNew</h2>;
+import SurveyNew from './surveys/SurveyNew';
 
 class App extends React.Component {
   // lifecycle to check if current user is signed in or not
