@@ -1,13 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Dashboard = () => {
   return (
     <div>
       <h2>Dashboard</h2>
       <div className="fixed-action-btn">
-        <a className="btn-floating btn-large green">
+        <Link to="/surveys/new" className="btn-floating btn-large green">
           <i className="material-icons">add</i>/>
-        </a>
+        </Link>
       </div>
     </div>
   );
