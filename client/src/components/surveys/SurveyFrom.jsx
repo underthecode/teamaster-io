@@ -1,5 +1,7 @@
 import React from 'react';
+import { reduxForm } from 'redux-form';
 
+// SurveyForm renders a form for user to add input
 class SurveyForm extends React.Component {
   render() {
     return (
@@ -10,4 +12,6 @@ class SurveyForm extends React.Component {
   }
 }
 
-export default SurveyForm;
+export default reduxForm({
+  form: 'surveyForm'
+})(SurveyForm);
