@@ -7,6 +7,9 @@ export default emails => {
     .filter(email => emailRegex.test(email) === false);
 
   if (invalidEmails.length) {
+    if (invalidEmails.includes('')) {
+      return `Remove the last comma or add another email address`;
+    }
     return `These emails are invalid: ${invalidEmails}`;
   }
 
