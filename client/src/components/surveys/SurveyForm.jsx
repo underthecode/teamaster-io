@@ -8,7 +8,6 @@ import SurveyField from './SurveyField';
 import validateEmails from '../../utils/validateEmails';
 import formFields from './formFields';
 
-// SurveyForm renders a form for user to add input
 class SurveyForm extends React.Component {
   renderFields() {
     return _.map(formFields, field => {
