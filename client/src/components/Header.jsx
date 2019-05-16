@@ -4,10 +4,6 @@ import { Link } from 'react-router-dom';
 import Payments from './Payments';
 
 class Header extends React.Component {
-  constructor() {
-    super();
-  }
-
   renderContent() {
     switch (this.props.auth) {
       case null:
@@ -36,7 +32,7 @@ class Header extends React.Component {
   render() {
     return (
       <nav>
-        <div className="nav-wrapper">
+        <div className="nav-wrapper green lighten-1">
           <Link
             to={this.props.auth ? '/surveys' : '/'}
             className="left brand-logo"
