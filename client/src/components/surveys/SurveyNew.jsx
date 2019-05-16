@@ -32,5 +32,5 @@ class SurveyNew extends React.Component {
   }
 }
 
-// navigating away from SurveyNew our input values are dumped by default
+// navigating away from SurveyNew -> input values are dumped by default
 export default reduxForm({ form: 'surveyForm' })(SurveyNew);
