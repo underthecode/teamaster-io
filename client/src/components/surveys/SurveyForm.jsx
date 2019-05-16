@@ -1,3 +1,5 @@
+// SurveyForm renders a form for user to configure surveys to sent to a list of recipients
+
 import _ from 'lodash';
 import React from 'react';
 import { reduxForm, Field } from 'redux-form';
@@ -78,5 +80,6 @@ const validate = values => {
 
 export default reduxForm({
   validate: validate,
-  form: 'surveyForm'
+  form: 'surveyForm',
+  destroyOnUnmount: false
 })(SurveyForm);
