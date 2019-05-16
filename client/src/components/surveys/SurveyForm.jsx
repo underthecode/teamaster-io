@@ -58,6 +58,12 @@ const validate = values => {
   return errors;
 };
 
+// navigating between SurveyForm && SurveyFormReview, inputs are persisted between the two components
+
+// however, navigating from SurveyForm to SurveyNew, inputs are cleared
+
+// also clears inputs when navigating to any other route when the SurveyForm has already inputted values
+
 export default reduxForm({
   validate: validate,
   form: 'surveyForm',
