@@ -14,8 +14,10 @@
   },
   "scripts": {
     "build:dev": "webpack -w --mode development --env.ENVIRONMENT=development",
-    "heroku-postbuild": "webpack --env.ENVIRONMENT=production",
     "start:dev": "nodemon server/index.js",
+    "webhook": "lt -p 5000 -s teamasterio",
+    "dev": "concurrently \"npm run build:dev\" \"npm run start:dev\" \"npm run webhook\"",
+    "heroku-postbuild": "webpack --env.ENVIRONMENT=production",
     "start": "node server/index.js"
   },
   "author": "",
