@@ -12,7 +12,11 @@ class SurveyNew extends React.Component {
 
   renderContent() {
     if (this.state.showFormReview) {
-      return <SurveyFormReview />;
+      return (
+        <SurveyFormReview
+          onBack={() => this.setState({ showFormReview: false })}
+        />
+      );
     } else {
       return (
         <SurveyForm
