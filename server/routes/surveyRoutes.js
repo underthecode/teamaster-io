@@ -36,7 +36,7 @@ module.exports = app => {
       .compact()
       // removes records with duplicate emails and surveyId props
       .uniqBy('email', 'surveyId')
-      // returns the final value after executing through chain
+      // returns the final rray avalue after executing through chain
       .value();
 
     console.log(events);
