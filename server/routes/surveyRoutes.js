@@ -15,10 +15,10 @@ module.exports = app => {
   });
 
   app.post('/api/surveys/webhooks', (req, res) => {
+    const p = new Path('/api/surveys/:surveyId/:choice');
+
     const events = _.map(req.body, event => {
-      const pathname = new URL(event.url).pathname;
-      const p = new Path('/api/surveys/:surveyId/:choice');
-      const match = p.test(pathname);
+      const match = p.test(new URL(event.url).pathname;);
 
       if (match) {
         return {
