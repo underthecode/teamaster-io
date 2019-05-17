@@ -36,10 +36,25 @@ module.exports = app => {
       .compact()
       // removes records with duplicate emails and surveyId props
       .uniqBy('email', 'surveyId')
+      // iterates through event object
+      // event object has three props: surveyId, email, choice
+      // and runs query to post / update database
+      .each(event => {
+        Survey.updateOne(
+          {
+            _id: event.surveyId,
+            recipients: {
+              $elemMatch: { email: event.email, responded: false }
+            }
+          },
+          {
+            $inc: { [event.choice]: 1 },
+            $set: { 'recipients.$.responded': true }
+          }
+        ).exec();
+      })
       // returns final array value after executing through chain
       .value();
-
-    console.log(events);
 
     res.send({});
   });
