@@ -17,22 +17,29 @@ module.exports = app => {
   app.post('/api/surveys/webhooks', (req, res) => {
     const p = new Path('/api/surveys/:surveyId/:choice');
 
-    const events = _.map(req.body, event => {
-      const match = p.test(new URL(event.url).pathname;);
+    // assign var && chain map, compact, uniqBy, value
+    const events = _.chain(req.body)
+      // iterates over each record to parse out pathname
+      .map(event => {
+        const match = p.test(new URL(event.url).pathname);
+        // if surveyId && choice prop exists
+        if (match) {
+          // return a new object with both of those props + email prop
+          return {
+            email: event.email,
+            surveyId: match.surveyId,
+            choice: match.choice
+          };
+        }
+      })
+      // removes duplicate records from array aka undefined records
+      .compact()
+      // removes records with duplicate emails and surveyId props
+      .uniqBy('email', 'surveyId')
+      // returns the final value after executing through chain
+      .value();
 
-      if (match) {
-        return {
-          email: event.email,
-          surveyId: match.surveyId,
-          choice: match.choice
-        };
-      }
-    });
-    // removes duplicate records from array aka undefined records
-    const compactEvents = _.compact(events);
-    // removes records with duplicate emails and surveyId props
-    const uniqueEvents = _.uniqBy(compactEvents, 'email', 'surveyId');
-    console.log(uniqueEvents);
+    console.log(events);
 
     res.send({});
   });
