@@ -1,8 +1,8 @@
 {
   "name": "teamaster-io",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "survey creation app w/ React-Redux, Express, OAuth, Stripe & NoSQL",
+  "main": "/client/src/index.js",
   "engines": {
     "node": "12.3.0",
     "npm": "6.9.0"
