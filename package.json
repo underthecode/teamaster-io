@@ -14,10 +14,10 @@
   },
   "scripts": {
     "start:dev": "nodemon server/index.js",
-    "build:dev": "webpack -w --mode development --env.ENVIRONMENT=development",
+    "build:dev": "webpack -d --watch",
     "webhook": "ssh -R teamaster-io:80:localhost:5000 serveo.net",
     "dev": "concurrently \"npm run start:dev\" \"npm run build:dev\" \"npm run webhook\"",
-    "heroku-postbuild": "webpack --env.ENVIRONMENT=production",
+    "heroku-postbuild": "webpack -p",
     "start": "node server/index.js"
   },
   "author": "",
