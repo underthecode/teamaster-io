@@ -1,7 +1,7 @@
 {
   "name": "teamaster-io",
   "version": "1.0.0",
-  "description": "survey creation app w/ React-Redux, Express, OAuth, Stripe & NoSQL",
+  "description": "multi-page app that gathers customer feedback with email surveys",
   "main": "/client/src/index.js",
   "engines": {
     "node": "12.4.0",
