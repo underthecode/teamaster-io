@@ -9,7 +9,10 @@ require('./models/User');
 require('./models/Survey');
 require('./services/passport');
 
-mongoose.connect(keys.mongoURI, { useNewUrlParser: true });
+mongoose.connect(keys.mongoURI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
 
 const app = express();
 
@@ -39,8 +42,10 @@ require('./routes/billingRoutes')(app);
 require('./routes/surveyRoutes')(app);
 
 // porting
-const PORT = process.env.PORT || 5000;
-app.listen(PORT);
+const port = process.env.PORT || 5000;
+app.listen(port, () => {
+  console.log(`Listening on http://localhost:${port}`);
+});
 
 /* OAuth overview (in dev env)
 
