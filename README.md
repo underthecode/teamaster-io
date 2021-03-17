@@ -11,7 +11,7 @@
 
 ## about
 
-#### a multi-page app that gathers customer feedback with email surveys, where:
+#### collects and aggregates customer feedback with email surveys, where:
 
 - React renders multiple components with Webpack bundling
 - Redux manages, stores, and updates signed in users and surveys
